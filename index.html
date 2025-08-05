@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <div class="animated-text-container">
+  <p id="animatedText">Seni çok seviyorum...</p>
+</div>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rıza ❤️ Şule</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      color: #333;
+    }
+
+    <!-- Şafak Sayar Butonu -->
+<button id="safakBtn" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background: #ff69b4; color: white; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 0 10px rgba(0,0,0,0.2); z-index: 999;">
+  Şafak Sayar
+</button>
+
+<script>
+  // Şafak Sayar Hesaplama
+  const safakBtn = document.getElementById("safakBtn");
+  safakBtn.addEventListener("click", () => {
+    const cikisTarihi = new Date("2025-12-12");
+    const bugun = new Date();
+    const farkMs = cikisTarihi - bugun;
+    const gun = Math.ceil(farkMs / (1000 * 60 * 60 * 24));
+    alert("Şafak: " + gun + " gün kaldı 💂‍♂️");
+  });
+
+  // Sevgililik Gün Sayacı
+  const sevgiliTarihi = new Date("2024-10-18");
+  const simdi = new Date();
+  const farkMs = simdi - sevgiliTarihi;
+  const gunSayisi = Math.floor(farkMs / (1000 * 60 * 60 * 24));
+  document.getElementById("sevgiliGunSayisi").textContent = "Bugünle birlikte " + gunSayisi + " gün oldu! 💖";
+</script>
+
+
+    header {
+      text-align: center;
+      font-size: 2em;
+      padding: 20px;
+      background-color: #ffe4e1;
+      font-weight: bold;
+    }
+
+    .video-area {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .video-wrapper {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .video-caption {
+      margin-top: 10px;
+      font-style: italic;
+      color: #555;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+
+    /* Preloader Genel */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+  transition: opacity 0.5s ease;
+}
+
+/* İçerik */
+.preloader-content {
+  text-align: center;
+  color: #d63384;
+  font-size: 24px;
+  font-family: 'Comic Sans MS', cursive;
+  animation: fadeIn 1.5s ease-in-out infinite alternate;
+}
+
+/* Emoji */
+.hand-heart {
+  font-size: 50px;
+  margin-top: 15px;
+  animation: pulse 1.2s infinite;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  0% { opacity: 0.6; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+      z-index: 10;
+    }
+
+    .heart {
+      position: absolute;
+      pointer-events: none;
+      font-size: 20px;
+      opacity: 0.8;
+      animation: float-up 1.2s ease-out forwards;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-60px) scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    #safak-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff4d6d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      font-weight: bold;
+      z-index: 999;
+    }
+
+    #safak-popup {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Rıza ❤️ Şule</header>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <section id="video-section" class="video-area">
+    <h2>Bizim Videomuz</h2>
+    <div class="video-wrapper">
+      <video id="loveVideo" autoplay muted controls playsinline>
+        <source src="videos/video.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="video-caption">
+      Bu an, sadece bir video değil…<br />
+      Kalbimin seninle attığı, zamanın durduğu o saniyeler.
+    </p>
+    </section>
+  <!-- Sevgililik Tarihi -->
+<section id="sevgililik" style="text-align: center; margin: 30px 10px; font-size: 1.3em;">
+  <h2 style="color: #ff69b4;">❤️ Sevgili Olduğumuz Gün: 18.10.2024</h2>
+  <p id="sevgiliGunSayisi">Bugünle birlikte ... gün oldu!</p>
+</section>
+<lottie-player
+  src="https://lottie.host/0a0203c0-2dfb-4c58-9f03-89bfa437fa55/XV4KnEX0rV.json"
+  background="transparent"
+  speed="1"
+  style="width: 300px; height: 300px;"
+  loop
+  autoplay>
+</lottie-player>
+
+
+  <section class="gallery">
+    <img src="images/photo1.jpeg" alt="Fotoğraf 1" />
+    <img src="images/photo2.jpeg" alt="Fotoğraf 2" />
+    <img src="images/photo3.jpeg" alt="Fotoğraf 3" />
+    <img src="images/photo4.jpeg" alt="Fotoğraf 4" />
+    <img src="images/photo5.jpeg" alt="Fotoğraf 5" />
+    <img src="images/photo6.jpeg" alt="Fotoğraf 6" />
+    <img src="images/photo7.jpeg" alt="Fotoğraf 7" />
+    <img src="images/photo8.jpeg" alt="Fotoğraf 8" />
+    <img src="images/photo9.jpeg" alt="Fotoğraf 9" />
+    <img src="images/photo10.jpeg" alt="Fotoğraf 10" />
+    <img src="images/photo11.jpeg" alt="Fotoğraf 11" />
+    <img src="images/photo12.jpeg" alt="Fotoğraf 12" />
+    <img src="images/photo13.jpeg" alt="Fotoğraf 13" />
+    <img src="images/photo14.jpeg" alt="Fotoğraf 14" />
+  </section>
+
+  <div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img" />
+</div>
+
+
+  
+  <div id="safak-popup"></div>
+  <button id="safak-button">Şafak Sayar</button>
+
+  <script>
+    const galleryImages = document.querySelectorAll(".gallery img");
+    const colors = ['#ff4d6d', '#ff7f50', '#ffb347', '#f9c74f', '#90be6d', '#4d96ff', '#c77dff'];
+
+    galleryImages.forEach(img => {
+      img.addEventListener("mouseenter", () => {
+        for (let i = 0; i < 8; i++) {
+          const heart = document.createElement("div");
+          heart.classList.add("heart");
+          heart.textContent = "❤️";
+          heart.style.left = Math.random() * img.clientWidth + "px";
+          heart.style.top = Math.random() * img.clientHeight + "px";
+          heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+          heart.style.position = "absolute";
+
+          img.style.position = "relative";
+          img.appendChild(heart);
+
+          setTimeout(() => {
+            heart.remove();
+          }, 1200);
+        }
+      });
+    });
+
+    const safakButton = document.getElementById("safak-button");
+    const safakPopup = document.getElementById("safak-popup");
+
+    safakButton.addEventListener("click", () => {
+      const cikisTarihi = new Date("2025-12-12");
+      const bugun = new Date();
+      const kalanGun = Math.ceil((cikisTarihi - bugun) / (1000 * 60 * 60 * 24));
+
+      safakPopup.textContent = `Şafak: ${kalanGun} gün kaldı 💂‍♂️`;
+      safakPopup.style.display = "block";
+
+      setTimeout(() => {
+        safakPopup.style.display = "none";
+      }, 4000);
+    });
+  </script>
+  <!-- Şafak Sayar Butonu -->
+<button id="safakBtn" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background: #ff69b4; color: white; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 0 10px rgba(0,0,0,0.2); z-index: 999;">
+  Şafak Sayar
+</button>
+
+<!-- Sevgililik Tarihi -->
+<div id="sevgililik" style="text-align: center; margin-top: 40px; font-size: 1.3em;">
+  <h2 style="color: #ff69b4;">❤️ Sevgili Olduğumuz Gün: 18.10.2024</h2>
+  <p id="sevgiliGunSayisi">Bugünle birlikte ... gün oldu!</p>
+</div>
+
+
+
+<script>
+  function saveMemory() {
+    const input = document.getElementById('memoryInput');
+    const value = input.value.trim();
+    if (value === '') return;
+
+    const memories = JSON.parse(localStorage.getItem('memories') || '[]');
+    memories.push(value);
+    localStorage.setItem('memories', JSON.stringify(memories));
+
+    input.value = '';
+    displayMemories();
+  }
+
+  function displayMemories() {
+    const memoryList = document.getElementById('memoryList');
+    const memories = JSON.parse(localStorage.getItem('memories') || '[]');
+    memoryList.innerHTML = '';
+    memories.forEach(text => {
+      const div = document.createElement('div');
+      div.className = 'memory-entry';
+      div.textContent = text;
+      memoryList.appendChild(div);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', displayMemories);
+</script>
+
+<script>
+  // Şafak Sayar Hesaplama
+  const safakBtn = document.getElementById("safakBtn");
+  safakBtn.addEventListener("click", () => {
+    const cikisTarihi = new Date("2025-12-12");
+    const bugun = new Date();
+    const farkMs = cikisTarihi - bugun;
+    const gun = Math.ceil(farkMs / (1000 * 60 * 60 * 24));
+    alert("Şafak: " + gun + " gün kaldı 💂‍♂️");
+  });
+
+  // Sevgililik Gün Sayacı
+  const sevgiliTarihi = new Date("2024-10-18");
+  const simdi = new Date();
+  const farkMs = simdi - sevgiliTarihi;
+  const gunSayisi = Math.floor(farkMs / (1000 * 60 * 60 * 24));
+  document.getElementById("sevgiliGunSayisi").textContent = "Bugünle birlikte " + gunSayisi + " gün oldu! 💖";
+</script>
+
+<script>
+  // Kalp Yağmuru Efekti
+  function createHeartRain() {
+    const heart = document.createElement("div");
+    heart.className = "heart-rain";
+    heart.textContent = "💖";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = "-30px";
+    heart.style.position = "fixed";
+    heart.style.fontSize = (16 + Math.random() * 24) + "px";
+    heart.style.color = ["#ff69b4", "#ff1493", "#ff6ec7", "#ff85a2"][Math.floor(Math.random() * 4)];
+    heart.style.opacity = 0.8;
+    heart.style.zIndex = 9999;
+    heart.style.animation = "fall 5s linear";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeartRain, 300);
+</script>
+
+
+<section class="spotify-player" style="text-align: center; margin: 60px auto;">
+  <h2 style="font-size: 28px; margin-bottom: 20px; color: #d63384;">
+    💖 Bizim Şarkımız 💖
+  </h2>
+  
+  <div style="display: inline-block; background: linear-gradient(135deg, #ffb6c1, #ffe6f0); padding: 30px; border-radius: 25px; box-shadow: 0 12px 24px rgba(0,0,0,0.2); max-width: 500px; width: 90%;">
+    
+    <video id="background-music" autoplay loop controls playsinline style="width: 100%; border-radius: 20px;">
+      <source src="music/sarki.mp4" type="video/mp4">
+      Tarayıcınız bu videoyu desteklemiyor.
+    </video>
+
+    <p style="margin-top: 15px; font-style: italic; font-size: 16px; color: #a05278;">
+      🎵 Bu şarkı... kalbimin sana attığı melodisi 🎶
+    </p>
+  </div>
+</section>
+
+
+
+
+<footer class="footer-message">
+  <p>Sen Umay'ımın annesi olmayı hak edecek tek kadınsın...<br>💖 Benden asla soğuma 💖</p>
+</footer>
+ 
+<title>Anı Defteri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Indie Flower', cursive;
+      background-color: #f9f5e9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .memory-book {
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #fdf6e3;
+      border: 2px solid #c2b280;
+      padding: 30px;
+      margin: 50px auto;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .memory-book h2 {
+      text-align: center;
+      font-size: 2em;
+      color: #5c4033;
+      margin-bottom: 20px;
+    }
+
+    .memory-book textarea {
+      width: 100%;
+      height: 120px;
+      padding: 15px;
+      font-size: 1.1em;
+      border: 2px dashed #a18860;
+      background-color: #fffaf0;
+      resize: none;
+      border-radius: 10px;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .memory-book button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background-color: #deb887;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #3e2723;
+      transition: background-color 0.3s ease;
+    }
+
+    .memory-book button:hover {
+      background-color: #d2b48c;
+    }
+
+    #memoryList {
+      margin-top: 20px;
+    }
+
+    .memory-entry {
+      background-color: #fffaf0;
+      border-left: 4px solid #a18860;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      white-space: pre-wrap;
+    }
+  </style>
+   <section class="memory-book">
+    <h2>Anı Defterimiz 📖</h2>
+    <textarea id="memoryInput" placeholder="Bir şeyler karala..."></textarea>
+    <button onclick="saveMemory()">Gönder</button>
+    <div id="memoryList"></div>
+  </section>
+  <script>
+  // Sayfa yüklendiğinde preloader'ı gizle
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 1000); // 1 saniyede kaybolur
+  });
+</script>
+
+
+  <script>
+    function saveMemory() {
+      const input = document.getElementById('memoryInput');
+      const value = input.value.trim();
+      if (value === '') return;
+
+      const memories = JSON.parse(localStorage.getItem('memories') || '[]');
+      memories.push(value);
+      localStorage.setItem('memories', JSON.stringify(memories));
+
+      input.value = '';
+      displayMemories();
+    }
+
+    function displayMemories() {
+      const memoryList = document.getElementById('memoryList');
+      const memories = JSON.parse(localStorage.getItem('memories') || '[]');
+      memoryList.innerHTML = '';
+      memories.forEach(text => {
+        const div = document.createElement('div');
+        div.className = 'memory-entry';
+        div.textContent = text;
+        memoryList.appendChild(div);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', displayMemories);
+  </script>
+
+<!-- YÜKLEME EKRANI -->
+<div id="preloader">
+  <div class="preloader-content">
+    <p>💖 Dünyanın en güzel kızına... 💖</p>
+    <div class="hand-heart">🫶</div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #fff0f5;
+  text-align: center;
+}
+
+.animated-text-container {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1.5em;
+  color: #e91e63;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.heart-rain {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  color: pink;
+  animation: fall 3s linear infinite;
+  z-index: 999;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.heart-rain {
+  animation: fall 5s linear;
+}
+
+
+.footer-message {
+  background-color: #ffe4e1;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 1.4em;
+  color: #b30059;
+  font-weight: bold;
+  animation: pulseText 3s infinite ease-in-out;
+  border-top: 2px dashed #ffb6c1;
+  margin-top: 40px;
+}
+
+@keyframes pulseText {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+.memory-book {
+  background: url('https://i.imgur.com/5D2p6Ck.png'); /* Çizgili not kağıdı deseni */
+  background-size: cover;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 60px auto;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.memory-book h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.memory-book textarea {
+  width: 100%;
+  height: 200px;
+  border: none;
+  background: transparent;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  resize: none;
+  outline: none;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.memory-book button {
+  margin-top: 15px;
+  display: block;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  background-color: #ffb6c1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+.memory-book button:hover {
+  background-color: #ff6f91;
+  color: white;
+}
+</style>
+
+
+
+.memory-book {
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #fdf6e3;
+  border: 2px solid #c2b280;
+  padding: 30px;
+  margin: 50px auto;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  font-family: 'Indie Flower', cursive;
+}
+
+.memory-book h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #5c4033;
+  margin-bottom: 20px;
+}
+
+.memory-book textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.1em;
+  border: 2px dashed #a18860;
+  background-color: #fffaf0;
+  resize: none;
+  border-radius: 10px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+}
+
+.memory-book button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.1em;
+  background-color: #deb887;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #3e2723;
+  transition: background-color 0.3s ease;
+}
+
+.memory-book button:hover {
+  background-color: #d2b48c;
+}
+
+#memoryList {
+  margin-top: 20px;
+}
+
+.memory-entry {
+  background-color: #fffaf0;
+  border-left: 4px solid #a18860;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  white-space: pre-wrap;
+}
+
+header {
+  background: #ffb6c1;
+  padding: 20px;
+  font-size: 24px;
+}
+.video-area {
+  margin: 20px auto;
+  padding: 20px;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+
+/* Slaytlı galeri */
+.slider-gallery {
+  margin: 60px auto;
+  max-width: 90%;
+  overflow: hidden;
+}
+.slider-container {
+  position: relative;
+}
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.slider-track img {
+  width: 300px;
+  margin: 0 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.slider-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+.prev { left: 0; }
+.next { right: 0; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  max-height: 80%;
+}
+.lightbox-close {
+  position: absolute;
+  top: 30px; right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sevgi Sözleri */
+.love-quotes {
+  text-align: center;
+  font-size: 22px;
+  color: #d63384;
+  font-style: italic;
+  margin: 40px 10px;
+  animation: fadeInOut 5s infinite;
+}
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+/* Preloader Stili */
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff0f5;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.preloader-content {
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #d63384;
+  font-size: 24px;
+  animation: fadeIn 1.5s ease-in-out infinite alternate;
+}
+
+.hand-heart {
+  font-size: 48px;
+  margin-top: 15px;
+  animation: pulse 1.2s infinite;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  0% { opacity: 0.6; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+ 
+ /* Galeri fotoğrafları */
+.gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.gallery img:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+/* Kalp stilleri */
+.heart {
+  position: absolute;
+  pointer-events: none;
+  font-size: 20px;
+  opacity: 0.8;
+  animation: float-up 1.2s ease-out forwards;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px) scale(1.6);
+    opacity: 0;
+  }
+}
